@@ -1,0 +1,161 @@
+/* worldmap.css */
+/* This css contains the styling of the world map plot and its contents*/
+
+.visualization.large {
+    display: flex;
+    /* flex-basis: 80%; */
+    height: 320px;
+    width: 100%;
+    min-width: 70%;
+    max-width: 75%;
+    min-height: 20em;
+    max-height: 35em;
+    resize: both;
+}
+
+#title-container {
+    display: flex;
+    align-items: center;
+}
+
+#toggle-container {
+    margin: auto;
+    /* margin-left: 15px; */
+    z-index: 10px;
+    height: 45px;
+    font-size: large;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.fa-toggle-on,
+.fa-toggle-off {
+    font-size: 25px;
+}
+
+#world-map-visualization {
+    flex: 1;
+    background: none;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    height: 87%;
+}
+
+/* instructions for map visualization with glassmorphism */
+#map-instructions {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 0.6em;
+    z-index: 10;
+    /* above the SVG */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.demographics1 {
+    flex-basis: 90%;
+}
+
+.select-to-view-text {
+    position: absolute;
+    top: 20px;
+    width: 15%;
+    right: 4%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+    transition: all 0.6s ease;
+}
+
+.reset-zoom {
+    position: absolute;
+    top: 4%;
+    left: 1%;
+    background-color: #161d30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(154, 153, 153, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.reset-bubble {
+    position: absolute;
+    top: 10px;
+    right: 1%;
+    background-color: #161d30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(154, 153, 153, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.no-students-rate,
+.gdp-rate,
+.unemployment-rate,
+.inflation-rate {
+    right: 2%;
+    background: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 1.5em;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    transition: all 0.6s ease;
+}
+
+.no-students-rate {
+    position: absolute;
+    top: 60px;
+}
+
+.gdp-rate {
+    position: absolute;
+    top: 160px;
+}
+
+.unemployment-rate {
+    position: absolute;
+    top: 110px;
+}
+
+.inflation-rate {
+    position: absolute;
+    top: 210px;
+}

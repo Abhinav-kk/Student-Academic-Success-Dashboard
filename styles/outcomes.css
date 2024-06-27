@@ -1,0 +1,41 @@
+/* outcomes.css */
+/* This css contains the styling of the Student Outcomes (Donut Chart) plot*/
+
+.visualization.outcomes {
+    width: 25%;
+    height: 100%;
+    float: left;
+    margin: 0;
+    max-width: 100%;
+    min-width: 10%;
+}
+
+#outcomes1 svg {
+    display: block;
+}
+
+.resetButton {
+    background: none;
+    border: none;
+}
+
+.resetButton:hover {
+    color: #717171;
+    fill-opacity: 0.85;
+    scale: 1.2
+}
+
+.legend-text {
+    font-size: 12px;
+    line-height: 12px;
+    vertical-align: middle;
+}
+
+.legend rect {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.legend {
+    cursor: pointer;
+}

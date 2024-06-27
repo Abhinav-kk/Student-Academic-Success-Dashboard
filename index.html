@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Outcomes Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/visualization-main.css">
+    <link rel="stylesheet" href="styles/statcards.css">
+    <link rel="stylesheet" href="styles/worldmap.css">
+    <link rel="stylesheet" href="styles/outcomes.css">
+    <link rel="stylesheet" href="styles/showByPlots.css">
+    <link rel="stylesheet" href="styles/line-violin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bc1f2973d6.js" crossorigin="anonymous"></script>
+    <script src="lib/d3/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>Student Outcomes Dashboard</h1>
+        </header>
+        <main class="dashboard-main">
+            <div class="glass-background">
+                <div class="glance-element">
+                    <span>At a Glance</span>
+                </div>
+                <div class="stat-container">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-purple">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p id="totalStudents" class="stat-number">0</p>
+                            <p class="stat-title">Total Students</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon bg-blue">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p id="totalCountries" class="stat-number">0</p>
+                            <p class="stat-title">Total Countries</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon bg-green">
+                            <i class="fas fa-chart-line"></i> <!-- Icon for Dropout to Graduate Ratio -->
+                        </div>
+                        <div class="stat-info">
+                            <p id="dropoutGraduateRatio" class="stat-number">0%</p>
+                            <p class="stat-title">Dropout To Graduate Ratio</p>
+                        </div>
+                    </div>          
+                    <div class="stat-card">
+                        <div class="stat-icon bg-yellow">
+                            <i class="fas fa-calendar-alt"></i> <!-- Icon for Mean Age at Enrollment -->
+                        </div>
+                        <div class="stat-info">
+                            <p id="meanAgeEnrollment" class="stat-number">0</p>
+                            <p class="stat-title">Mean Age at Enrollment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row1">
+                <section class="visualization large" id="demographics">
+                    <section class="demographics1">
+                        <div id="title-container">
+                            <h2 id="worldchart-title">Demographics & Socio-Economic</h2>
+                            <span id="toggle-container"></span>
+                        </div>
+                        <!-- Demographics Visualization -->
+                        <div id="map-instructions">
+                            * Double click to see stats of specific country<br>
+                            * Click to filter out a country
+                        </div>
+                        <!-- Place for World Map Visualization -->
+                        <div id="world-map-visualization" class="visualization-box">
+
+                            <!-- The SVG element will be added by the WorldMap.js script -->
+                        </div>
+                        <!-- Including WorldMap.js and Bubble Chart for the demographic visualization -->
+                        <script type="module" src="scripts/WorldMap.js"></script>
+                        <script type="module" src="scripts/BubbleChart.js"></script>
+                        <!-- Placeholder for Gender Donut Chart -->
+                    </section>
+                    <section class="gender1">
+                        <h2 class="plotselection">Show <select id="show-by-dropdown" class="custom-dropdown">
+                                <option value="gender">by Gender</option>
+                                <option value="debt">by Debt</option>
+                                <option value="scholarship">by Scholarship</option>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </select>
+                        </h2>
+
+                        <!-- Place for Filter Plots -->
+                        <div id="gender-plot" class="transparent-visualiazation">
+                            <!-- The SVG element will be added by the GenderPlot.js script -->
+                            <!-- Including OutcomesChart.js for the map visualization -->
+                        </div>
+                        <script type="module" src="scripts/main.js"></script>
+                        <script type="module" src="scripts/GenderPlot.js"></script>
+                        <script type="module" src="scripts/DebtorPlot.js"></script>
+                        <script type="module" src="scripts/ScholarshipPlot.js"></script>
+                        <script type="module" src="scripts/ViolinChart.js"></script>
+                    </section>
+                </section>
+                <section class="visualization outcomes" id="student-outcomes">
+                    <h2>Student Outcomes <button id="resetChart" class="resetButton"><i
+                                class="fa-solid fa-rotate-left"></i></button></h2>
+                    <!-- Student Outcomes Visualization -->
+                    <div id="outcomes1" class="visualization-box">
+                        <!-- The SVG element will be added by the OutcomesChart.js script -->
+                    </div>
+                    <!-- Including OutcomesChart.js for the map visualization -->
+                    <script type="module" src="scripts/OutcomesChart.js"></script>
+                </section>
+            </div>
+            <div class="row2">
+                <section class="visualization dropout" id="academic-performance">
+                    <h2>Age Vs. Dropout Rate</h2>
+                    <!-- Academic Performance Visualization -->
+                    <div id="dropoutrate" class="visualization-box line">
+                        <!-- The SVG element will be added by the DropoutRate.js script -->
+                    </div>
+                    <!-- Including DropoutRate.js for the map visualization -->
+                    <script type="module" src="scripts/DropoutRate.js"></script>
+                </section>
+                <section class="visualization violin" id="additional-insights">
+                    <h2>Distribution of Student Outcomes</h2>
+                    <!-- Grade Distribution Visualization -->
+                    <div id="grade1" class="visualization-box">
+                        <!-- The SVG element will be added by the DropoutRate.js script -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

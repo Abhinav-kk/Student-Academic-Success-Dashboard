@@ -1,0 +1,80 @@
+/* visualization-main.css */
+/* This css contains the base styling and interaction styling of the containers of the visualization*/
+
+.visualization {
+    color: #000000;
+    text-align: center;
+    border-radius: 18px;
+    padding: 15px;
+    height: 150px;
+    box-shadow: 5px 5px 15px rgba(69, 77, 188, 0.5);
+    transition: box-shadow 0.3s ease;
+    margin: 0px;
+    margin-right: 1em;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* GlassMorphism Design */
+.visualization {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    /* Blur the background */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    /* Subtle border */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* elevation */
+}
+
+.visualization-box svg {
+    margin-top: 0.75em;
+    height: 100%;
+}
+
+.visualization-box {
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: none;
+    border: 1px solid rgba(252, 252, 252, 0.149);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 85%;
+}
+
+.visualization h2 {
+    margin-top: 0;
+    font-weight: 400;
+    border-bottom: 2px solid #b0b0b0;
+    padding-bottom: 0.5em;
+    text-align: start;
+}
+
+.visualization:hover {
+    box-shadow: 2px 2px 5px rgba(45, 67, 142, 0.548);
+}
+
+.visualization-box svg path {
+    stroke: #ffffff80;
+    stroke-width: 0.7;
+    transition: fill 0.3s, stroke-width 0.3s;
+}
+
+.visualization-box svg path:hover,
+.label-box:hover {
+    stroke-width: 1;
+    fill-opacity: 0.85;
+}
+
+.transparent-visualiazation {
+    background: none;
+    scale: 1.2;
+}
+
+.transparent-visualiazation svg path:hover {
+    stroke-width: 1;
+    fill-opacity: 0.85;
+}
